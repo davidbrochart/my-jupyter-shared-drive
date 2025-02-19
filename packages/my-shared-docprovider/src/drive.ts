@@ -214,6 +214,9 @@ export class MySharedDrive extends Drive implements ICollaborativeDrive {
       else if (options.format === 'text' && model.format === 'json') {
           content = JSON.stringify(content);
       }
+      else if (options.format === 'json' && model.format === 'text') {
+          content = JSON.parse(content);
+      }
       provider.setSource(content);
     });
 
